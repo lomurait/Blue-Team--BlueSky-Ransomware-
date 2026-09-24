@@ -39,8 +39,7 @@ network traffic.
 Windows Event Logs were analyzed to identify suspicious process execution,
 PowerShell activity, and other host-level evidence.
 
-![Event Viewer Analysis](screenshots/event-viewer.png)
-
+Eventviewer1.png
 ## 4. PowerShell Activity
 
 The investigation identified PowerShell scripts being used for
