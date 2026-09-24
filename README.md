@@ -19,42 +19,41 @@ deployment.
 - CyberChef
 - VirusTotal
 - MITRE ATT&CK
+# BlueSky Ransomware Investigation
 
-## 1. Wireshark Analysis
+## 1. PowerShell Execution
+Event Viewer evidence of PowerShell activity.
+![Project 3](<Eventviewer.png>)
 
-Wireshark was used to analyze the PCAP and identify suspicious network
-activity, including port scanning, HTTP traffic, and MSSQL-related traffic.
+## 2. Command-and-Control Communication
+Wireshark evidence of HTTP communication with `87.96.21.84`
+and retrieval of `checking.ps1`.
+![Project 3](<Project 6.png>)
 
-![Wireshark Analysis](screenshots/Project1.png)
+## 3. Defense Evasion
+PowerShell commands modifying Windows Defender settings.
+![Project 3](<Project 8.png>)
 
-## 2. NetworkMiner Analysis
+## 4. Credential Access
+Evidence of `Invoke-PowerDump.ps1` being retrieved to dump system hashes.
+![Project 3](<Project 12.png>)
 
-NetworkMiner was used to extract files and metadata from the captured
-network traffic.
+## 5. Lateral Movement
+Evidence of PowerShell and SMB-based remote execution activity.
+![Project 3](<Project 14.png>)
 
-![NetworkMiner Analysis](screenshots/networkminer.png)
+## 6. PowerShell Obfuscation Analysis
+CyberChef analysis of an encoded PowerShell command.
+![Project 3](<Project 13_1.png>)
 
-## 3. Windows Event Viewer
+## 7. Evidence Collection and Integrity
+SHA-256 hashes of extracted forensic artifacts.
+![Project 3](<Project 15.png>)
 
-Windows Event Logs were analyzed to identify suspicious process execution,
-PowerShell activity, and other host-level evidence.
+## 8. Malware Identification
+VirusTotal analysis of the extracted malware sample.
+![Project 3](<Project 16.png>)
 
-Eventviewer1.png
-## 4. PowerShell Activity
-
-The investigation identified PowerShell scripts being used for
-in-memory execution and post-exploitation activity.
-
-![PowerShell Analysis](screenshots/powershell.png)
-
-## 5. Ransomware Evidence
-
-The ransomware encrypted files using the `.bluesky` extension and created
-the ransom note:
-
-`# DECRYPT FILES BLUESKY #`
-
-![Ransomware Evidence](screenshots/ransomware.png)
 
 ## Attack Chain
 
